@@ -1,0 +1,30 @@
+/bin/
+# Database conexion 
+config.properties
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+.metadata/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Build output
+target/
+build/
+
+# Dependency directories
+lib/
+node_modules/
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Backup files
+*~
