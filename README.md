@@ -3,4 +3,4 @@ En este proyecto se utiliza el patrón de diseño DAO (Data Access Object) utili
 
 ## Dependencias
 Este proyecto requiere la siguiente dependencia:
-* **MySQL Connector:** Utilizado para la conexión a la base de datos MySQL. [https://www.mysql.com/products/connector/]
+* **MySQL Connector:** Utilizado para la [conexión a la base de datos MySQL](https://www.mysql.com/products/connector/).
