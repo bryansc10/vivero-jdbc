@@ -57,8 +57,9 @@ public abstract class DAO {
 			}
 			if (conexion != null) {
 				conexion.close();
+				System.out.println("Se cerro la base de datos exitosamente.");
 			}
-
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			throw e;
@@ -69,7 +70,7 @@ public abstract class DAO {
 		try {
 			connectarDataBase();
 			statement = conexion.createStatement();
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -89,9 +90,6 @@ public abstract class DAO {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			throw e;
-
-		} finally {
-			desconectarDataBase();
 		}
 	}
 }
