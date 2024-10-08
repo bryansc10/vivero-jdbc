@@ -2,12 +2,14 @@ package com.testConexion.app;
 
 import entidades.Cliente;
 import persistencia.ClienteDAO;
+import persistencia.ProductoDAO;
 
 public class App {
 
 	public static void main(String[] args) {
 		// Crea una instancia de tu clase ClienteDao para poder acceder a los métodos de la clase.
 		ClienteDAO pruebasClientes = new ClienteDAO();
+		//ProductoDAO pruebaProductos = new ProductoDAO();
 		
 		//Inserta 2 registros a tu BBDD, utilizando el constructor que recibe parámetros (sin enviar el id_cliente)
 		Cliente cliente1 = new Cliente(24, "Abel", "Abel", "Grow", "3432245", 
@@ -17,6 +19,7 @@ public class App {
 		try {
 			//pruebasClientes.guardarCliente(cliente1);
 			//pruebasClientes.guardarCliente(cliente2);
+			pruebasClientes.buscarClientePorCodigo(2);
 			
 		} catch (Exception e) {
 			System.out.println("No se guardo el cliente.");
@@ -25,10 +28,17 @@ public class App {
 		
 		//Invoca al método listarTodosLosClientes para verificar que recuperes la información de tu base de datos de manera correcta. 
 		try {
-			pruebasClientes.listarTodosLosClientes();
+			//pruebasClientes.listarTodosLosClientes();
 			
 		} catch (Exception e) {
 			System.out.println("Error al listar los clientes");
+		}
+		
+		// Eliminar un registro
+		try {
+			//pruebaProductos.eliminarProductoPorCodigo(50);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar el producto");
 		}
 
 	}

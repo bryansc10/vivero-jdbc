@@ -1,5 +1,6 @@
 package persistencia;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +57,41 @@ public class ClienteDAO extends DAO {
 			System.out.printf("%-3s %-20s %-20s\n", "ID", "Nombre", "Apellido");
 			for (Cliente clt : clientes) {
 				System.out.printf("%-3d %-20s %-20s\n", clt.getId_cliente(), clt.getNombre_contacto(), clt.getApellido_contacto());
+			}
+			
+			desconectarDataBase();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			desconectarDataBase();
+			throw e;
+		}
+	}
+	
+	public void buscarClientePorCodigo(int id_cliente) throws Exception {
+		try {
+			Cliente cliente = new Cliente();
+			String sql = String.format("SELECT * FROM cliente WHERE id_cliente = %d", id_cliente);
+			consultarDataBase(sql);
+			
+			if(resultSet.next()) {
+				cliente.setId_cliente(resultSet.getInt("id_cliente"));
+				cliente.setCodigo_cliente(resultSet.getInt("codigo_cliente"));
+				cliente.setNombre_cliente(resultSet.getString("nombre_cliente"));
+				cliente.setNombre_contacto(resultSet.getString("nombre_contacto"));
+				cliente.setApellido_contacto(resultSet.getString("apellido_contacto"));
+				cliente.setTelefono(resultSet.getString("telefono"));
+				cliente.setFax(resultSet.getString("fax"));
+				cliente.setCiudad(resultSet.getString("ciudad"));
+				cliente.setRegion(resultSet.getString("region"));
+				cliente.setPais(resultSet.getString("pais"));
+				cliente.setCodigo_postal(resultSet.getString("codigo_postal"));
+				cliente.setId_empleado(resultSet.getInt("id_empleado"));
+				cliente.setLimite_credito(resultSet.getDouble("limite_credito"));
+				
+				System.out.println(cliente.toString());
+			} else {
+				System.out.println("ID de cliente no encontrado");
 			}
 			
 			desconectarDataBase();

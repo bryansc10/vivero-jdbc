@@ -166,8 +166,6 @@ public class Cliente {
 				+ nombre_cliente + ", nombre_contacto=" + nombre_contacto + ", apellido_contacto=" + apellido_contacto
 				+ ", telefono=" + telefono + ", fax=" + fax + ", ciudad=" + ciudad + ", region=" + region + ", pais="
 				+ pais + ", codigo_postal=" + codigo_postal + ", id_empleado=" + id_empleado + ", limite_credito="
-				+ limite_credito + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+				+ limite_credito + "]";
 	}
-
 }
