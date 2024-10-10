@@ -107,8 +107,6 @@ public class Pedido {
 	public String toString() {
 		return "Pedido [id_pedido=" + id_pedido + ", codigo_pedido=" + codigo_pedido + ", fecha_pedido=" + fecha_pedido
 				+ ", fecha_esperada=" + fecha_esperada + ", fecha_entrega=" + fecha_entrega + ", estado=" + estado
-				+ ", comentarios=" + comentarios + ", id_cliente=" + id_cliente + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", comentarios=" + comentarios + ", id_cliente=" + id_cliente + "]";
 	}
-	
 }

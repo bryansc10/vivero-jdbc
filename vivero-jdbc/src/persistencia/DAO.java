@@ -21,7 +21,7 @@ public abstract class DAO {
 	private final String DATABASE = obtenerCredenciales("config.database");
 	private final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-	// Antes creamos un archivo config.properties y añadimos (EJ. config.user = tuNombreUsuarioBD) y así con el resto que necesitemos.
+	// Antes creamos un archivo config.properties y añadimos las propiedades (EJ. config.user = tuNombreUsuarioBD y así con el resto que necesitemos).
 	private String obtenerCredenciales(String credencial) {
 		Properties props = new Properties();
 		try (FileInputStream input = new FileInputStream("config.properties")) {
@@ -39,7 +39,6 @@ public abstract class DAO {
 			Class.forName(DRIVER);
 			String url = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
 			conexion = DriverManager.getConnection(url, USER, PASSWORD);
-			System.out.println("Conexión exitosa a la base de datos.");
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -57,7 +56,6 @@ public abstract class DAO {
 			}
 			if (conexion != null) {
 				conexion.close();
-				System.out.println("Se cerro la base de datos exitosamente.");
 			}
 			
 		} catch (Exception e) {

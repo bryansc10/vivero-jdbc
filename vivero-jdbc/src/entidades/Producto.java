@@ -129,8 +129,6 @@ public class Producto {
 		return "Producto [id_producto=" + id_producto + ", codigo_producto=" + codigo_producto + ", nombre=" + nombre
 				+ ", id_gama=" + id_gama + ", dimensiones=" + dimensiones + ", proveedor=" + proveedor
 				+ ", descripcion=" + descripcion + ", cantidad_en_stock=" + cantidad_en_stock + ", precio_venta="
-				+ precio_venta + ", precio_proveedor=" + precio_proveedor + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ precio_venta + ", precio_proveedor=" + precio_proveedor + "]";
 	}
-	
 }
